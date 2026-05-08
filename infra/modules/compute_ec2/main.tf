@@ -71,10 +71,10 @@ resource "aws_iam_instance_profile" "this" {
 
 # ── EC2 Instance ──────────────────────────────────────────────────────────────
 resource "aws_instance" "this" {
-  ami                    = var.ami_id
-  instance_type          = var.instance_type
-  iam_instance_profile   = aws_iam_instance_profile.this.name
-  vpc_security_group_ids = [aws_security_group.this.id]
+  ami                         = var.ami_id
+  instance_type               = var.instance_type
+  iam_instance_profile        = aws_iam_instance_profile.this.name
+  vpc_security_group_ids      = [aws_security_group.this.id]
   associate_public_ip_address = true
 
   user_data = <<-EOF
